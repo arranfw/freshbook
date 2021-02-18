@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Requirements } from './requirements.stories.tsx';
 import { Failures } from './failures.stories.tsx';
+import { Pitfalls } from './pitfalls.stories.tsx';
 
 <Meta title='Accessibility/01. Contrast' />
 
@@ -25,4 +26,12 @@ The following are examples of elements with failing contrast.
 
 <Canvas>
   <Story name='Failures'>{Failures.bind({})}</Story>
+</Canvas>
+
+## Pitfalls
+
+Make sure to avoid the following pitfalls.
+
+<Canvas>
+  <Story name='Pitfalls'>{Pitfalls.bind({})}</Story>
 </Canvas>

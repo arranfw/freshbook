@@ -26,18 +26,18 @@ const StyledTd = styled.td<CellProps>`
   vertical-align: middle;
 `;
 
-type CellProps = {
+interface CellProps extends React.HTMLAttributes<HTMLTableDataCellElement> {
   center?: boolean;
-};
+}
 
-type RowProps = {
+interface RowProps {
   alternatingColour?: boolean;
-};
+}
 
 interface TableType extends React.FC {
-  Tr: React.FC<RowProps>;
-  Th: React.FC<CellProps>;
-  Td: React.FC<CellProps>;
+  Tr: typeof StyledTr;
+  Th: typeof StyledTh;
+  Td: typeof StyledTd;
 }
 
 export const Table: TableType = ({ children }) => <StyledTable>{children}</StyledTable>;
