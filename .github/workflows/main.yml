@@ -1,21 +1,21 @@
-name: Deploy Storybook
+name: Build and Deploy
 
 on:
   push:
     branches:
-      - "master"
-
+      - master
+      
 jobs:
-  storybook-gh-pg:
-    name: Deploy Storybook
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
 
-      - name: npm install
-        run: npm ci
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run build-storybook
 
       - name: Deploy Storybook to gh-page
-        env:
-          GH_TOKEN: ${{ github.actor }}:${{secrets.GITHUB_TOKEN}}
-        run: npm run deploy-storybook
+        run: npm run deploy-storybook 
