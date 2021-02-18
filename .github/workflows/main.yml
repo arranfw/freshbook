@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-            github_token: ${{secrets.GITHUB_TOKEN}}
 
       - name: npm install
         run: npm ci
 
       - name: Deploy Storybook to gh-page
-        
+        env:
+          github_token: ${{secrets.GITHUB_TOKEN}}
         run: npm run deploy-storybook
