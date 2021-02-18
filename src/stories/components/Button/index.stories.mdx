@@ -1,0 +1,15 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Button } from '.';
+import * as stories from './index.stories.tsx';
+
+<Meta title='Components/Button' component={Button.Primary} />
+
+# Button
+
+<Canvas>
+  <Story name='Primary'>{stories.Primary.bind({})}</Story>
+</Canvas>
+
+<Canvas>
+  <Story name='Secondary'>{stories.Secondary.bind({})}</Story>
+</Canvas>

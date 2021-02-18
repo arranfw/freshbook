@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Requirements } from './requirements.stories.tsx';
+import { Failures } from './failures.stories.tsx';
+
+<Meta title='Accessibility/01. Contrast' />
+
+# Contrast
+
+[Color contrast](https://www.a11yproject.com/posts/2015-01-05-what-is-color-contrast/) is how legible colors are when placed next to,
+and on top of each other. Adjacent colours should have sufficient contrast between them.
+
+## Requirements
+
+These are examples of the **minimum** requirements for contrast per element type.
+
+**Note:** Interactive elements have been disabled and are meant for visual demonstration purposes only.
+
+<Canvas>
+  <Story name='Requirements'>{Requirements.bind({})}</Story>
+</Canvas>
+
+## Failures
+
+The following are examples of elements with failing contrast.
+
+<Canvas>
+  <Story name='Failures'>{Failures.bind({})}</Story>
+</Canvas>
