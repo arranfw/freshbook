@@ -15,7 +15,7 @@ jobs:
       - name: npm install
         run: npm ci
 
-      - name: Deploy Storybook to gh-page
+      - name: Deploy storybook to Github Pages
+        run: npm run deploy-storybook -- --ci
         env:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-        run: npm run deploy-storybook
+            GH_TOKEN: arranfw:${{ secrets.GITHUB_TOKEN }}
