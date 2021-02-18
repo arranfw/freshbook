@@ -126,7 +126,7 @@ export const Requirements: React.FC = () => {
         <AlertStar>*</AlertStar>
         Focus State References:{' '}
         <a
-          rel='noopener'
+          rel='noreferrer'
           target='_blank'
           href='https://www.w3.org/WAI/WCAG21/Techniques/css/C40'
           title='WAI Focus State Technique'
@@ -134,7 +134,7 @@ export const Requirements: React.FC = () => {
           1
         </a>{' '}
         <a
-          rel='noopener'
+          rel='noreferrer'
           target='_blank'
           href='https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Contrast_(Minimum)'
           title='WAI Contrast Minimum'
