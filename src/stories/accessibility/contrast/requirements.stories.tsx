@@ -132,6 +132,14 @@ export const Requirements: React.FC = () => {
           title='WAI Focus State Technique'
         >
           1
+        </a>{' '}
+        <a
+          rel='noopener'
+          target='_blank'
+          href='https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Contrast_(Minimum)'
+          title='WAI Contrast Minimum'
+        >
+          2
         </a>
       </PassingRegularText>
     </>
