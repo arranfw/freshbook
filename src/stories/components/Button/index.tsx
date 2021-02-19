@@ -9,6 +9,7 @@ const BaseButton = css`
   font-family: 'Open Sans';
   border-radius: 5px;
   transition: all 0.2s cubic-bezier(0.02, 1.505, 0.745, 1.235); // courtesy of braid design system
+  cursor: pointer;
   :focus {
     outline: 0;
   }
