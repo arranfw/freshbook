@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ScheduleView, BookingPeriod } from '.';
+import { Basic } from './index.stories.tsx';
+
+<Meta
+  title='Components/ScheduleView'
+  component={ScheduleView}
+  argTypes={{
+    monthOffset: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 5,
+      },
+    },
+    bookings: {
+      control: 'object',
+    },
+  }}
+/>
+
+# Schedule View
+
+<Canvas>
+  <Story
+    name='Primary'
+    args={{
+      monthOffset: 0,
+      bookings: [
+        {
+          date: new Date('2021-02-24T08:00:00.000Z'),
+          period: BookingPeriod.WHOLE_DAY,
+        },
+        {
+          date: new Date('2021-02-28T08:00:00.000Z'),
+          period: BookingPeriod.WHOLE_DAY,
+        },
+        {
+          date: new Date('2021-02-23T08:00:00.000Z'),
+          period: BookingPeriod.WHOLE_DAY,
+        },
+        {
+          date: new Date('2021-03-13T08:00:00.000Z'),
+          period: BookingPeriod.MORNING,
+        },
+        {
+          date: new Date('2021-04-30T08:00:00.000Z'),
+          period: BookingPeriod.AFTERNOON,
+        },
+      ],
+    }}
+  >
+    {Basic.bind({})}
+  </Story>
+</Canvas>
