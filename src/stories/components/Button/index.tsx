@@ -5,7 +5,7 @@ const BaseButton = css`
   box-shadow: 0 0 0 2px transparent;
   border: 2px solid transparent;
   padding: 0.5rem 1rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-family: 'Open Sans';
   border-radius: 5px;
   transition: all 0.2s cubic-bezier(0.02, 1.505, 0.745, 1.235); // courtesy of braid design system
@@ -50,15 +50,7 @@ const StyledSecondaryButton = styled.button`
   }
 `;
 
-const Primary: React.FC<{ className?: string }> = ({ className, children }) => {
-  return <StyledPrimaryButton className={className}>{children}</StyledPrimaryButton>;
-};
-
-const Secondary: React.FC<{ className?: string }> = ({ className, children }) => {
-  return <StyledSecondaryButton className={className}>{children}</StyledSecondaryButton>;
-};
-
 export const Button = {
-  Primary,
-  Secondary,
+  Primary: StyledPrimaryButton,
+  Secondary: StyledSecondaryButton,
 };
