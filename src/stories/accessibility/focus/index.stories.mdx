@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Success } from './success.stories.tsx';
+import { Failure } from './failure.stories.tsx';
+import { Pitfall } from './pitfall.stories.tsx';
+
+<Meta title='Accessibility/02. Focus' />
+
+# Focus
+
+Relevant WCAG Criteria:
+
+- [Focus Visible](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html) -
+  Element focus is critically important to keyboard users. It's important to make sure keyboard and screen reader users can
+  keep track of where they are on the page.
+- [Focus Order](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html) -
+  Elements should be ordered in a way that preserves meaning and operability, this usually means top to bottom and right to left.
+
+## Success
+
+There is nothing special happening here, the lesson here is that focus is handled very well by default.
+When using simple designs and straight forward implementations you won't likely need to do anything to
+manage focus manually.
+
+The most notable feature here is the focus ring which, while being a very similar colour to the navbar,
+has a white inner-border to make sure it has enough contrast even on the blue navbar.
+
+<Canvas>
+  <Story name='Success'>{Success.bind({})}</Story>
+</Canvas>
+
+## Failure
+
+In the following example, each of the elements has a different focus state. This is something that happens
+quite frequently as different people work on different pieces of a system. It's important to be as consistent
+as possible with your focus states provide as smooth an experience as possible.
+
+Check out the text field, its focus has been completely removed.
+[This Google search (1700+ results!)](https://www.google.com/search?q=site%3Astackoverflow.com+remove+focus+ring&oq=site%3Astackoverflow.com+remove+focus+ring)
+demonstrates how popular this technique is.
+
+Long story short, if an element is focusable, it should be demonstrated in an obvious way.
+If you remove the default outline, make sure to use appropriate alternative styling.
+
+```
+// Wrong
+:focus {
+  outline: 0;
+}
+// Right
+:focus {
+  outline: 0;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #2e86de;
+}
+```
+
+<Canvas>
+  <Story name='Failure'>{Failure.bind({})}</Story>
+</Canvas>
+
+## Pitfall
+
+In this example, there's a visually hidden modal that takes focus and can confuse users as they try
+to determine where focus is.
+
+<Canvas>
+  <Story name='Pitfall'>{Pitfall.bind({})}</Story>
+</Canvas>
