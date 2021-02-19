@@ -40,7 +40,7 @@ const LightIcon = styled(Icon)`
   cursor: pointer;
 `;
 
-export const Pitfalls: React.FC = () => {
+export const Pitfall: React.FC = () => {
   const { Tr, Td, Th } = Table;
   return (
     <Table>
