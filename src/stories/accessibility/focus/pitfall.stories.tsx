@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Button } from '../../components/Button';
 
-const TypographyBase = css`
-  font-family: 'Open Sans';
-  margin: 0;
-`;
 const StyledHeader = styled.nav`
   height: 48px;
   background: #4bcffa;
