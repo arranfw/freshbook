@@ -60,7 +60,12 @@ If you remove the default outline, make sure to use appropriate alternative styl
 ## Pitfall
 
 In this example, there's a visually hidden modal that takes focus and can confuse users as they try
-to determine where focus is.
+to determine where focus is. Try opening the modal without using your mouse. You'll notice that it takes
+a couple extra presses to get from the nav links to the modal button.
+
+We also has the issue modal focus, which in this case isn't handled at all and requires the user to `shift+tab`
+in order to access the modal content. That's a fairly complex topic involving manual focus and focus traps
+so we'll leave that for a future section.
 
 <Canvas>
   <Story name='Pitfall'>{Pitfall.bind({})}</Story>

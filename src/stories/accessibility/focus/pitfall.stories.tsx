@@ -41,28 +41,6 @@ const NavLink = styled.a`
   }
 `;
 
-const StyledInput = styled.input`
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid #6e6e6e;
-  font-size: 1rem;
-  :focus {
-    outline: 0;
-  }
-`;
-
-const StyledLabel = styled.label`
-  font-family: 'Open Sans';
-  font-size: 1rem;
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
-
 const StyledContent = styled.main`
   z-index: 0;
   position: relative;
@@ -77,17 +55,17 @@ const StyledContent = styled.main`
 
 const Modal = styled.div<{ open?: boolean }>`
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: -50px;
+  bottom: -50px;
   left: 0;
   right: 0;
-  background: #00000033;
+  background: #f1f1ff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 10;
-  transition: all 0.3s ${({ open }) => (open ? 'cubic-bezier(0,1.06,.63,1.2)' : 'cubic-bezier(.27,-0.06,1,-0.28)')};
+  transition: all 0.3s ${({ open }) => (open ? 'cubic-bezier(0, 1.06, .63, 1.1)' : 'cubic-bezier(.27, -0.06, 1, -0.1)')};
   transform: translateY(${({ open }) => (open ? '0' : '-100%')});
   opacity: ${({ open }) => (open ? '1' : '0')};
 `;
@@ -111,13 +89,9 @@ export const Pitfall: React.FC = () => {
         </NavLinks>
       </StyledHeader>
       <StyledContent>
-        <InputWrapper>
-          <StyledLabel htmlFor='inputId'>Name</StyledLabel>
-          <StyledInput id='inputId' type='text' placeholder='Enter Your Name' />
-        </InputWrapper>
         <Modal open={open}>
-          <Button.Secondary>Option 1</Button.Secondary>
-          <Button.Secondary>Option 2</Button.Secondary>
+          <Button.Secondary>Superfluous</Button.Secondary>
+          <hr />
           <Button.Primary onClick={() => setOpen(false)}>Close Modal</Button.Primary>
         </Modal>
         <Button.Primary onClick={() => setOpen(true)}>Open Modal</Button.Primary>
