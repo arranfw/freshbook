@@ -27,7 +27,7 @@ const FailingFocus = styled(FailingInput)`
   box-shadow: 0 0 0 1px #bbb;
 `;
 
-export const Failures: React.FC = () => {
+export const Failure: React.FC = () => {
   const { Tr, Td, Th } = Table;
   return (
     <>

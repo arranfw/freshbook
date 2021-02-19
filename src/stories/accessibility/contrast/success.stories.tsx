@@ -60,7 +60,7 @@ const AlertStar = styled.span`
   color: ${({ theme }) => theme.palette.tones.critical};
 `;
 
-export const Requirements: React.FC = () => {
+export const Success: React.FC = () => {
   const { Tr, Td, Th } = Table;
   return (
     <>
